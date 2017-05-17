@@ -9,21 +9,21 @@ import requests
 from bs4 import BeautifulSoup
 from pandas.io.json import json_normalize
 import json
-from flask import Flask, url_for
+from flask import request as request1
 app = Flask(__name__)
 
 @app.route('/')
 def api_root():
-    return 'bienvenido'
+    return 'Bienvenido, Porfavor revisa la documentacion en github'
 
-@app.route('/articles')
-def api_articles():
-    return 'List of ' + url_for('api_articles')
-
-@app.route('/estacion/<articleid>')
-def api_article(articleid):
+@app.route('/estacion', methods=['GET'])
+def api_article():
+    username = request1.args.get('estacion')
+    fecha = request1.args.get('Fecha')
+    rango= request1.args.get('rango')
+    conta = request1.args.get('parametro')
     url='http://sinaica.inecc.gob.mx/pags/datGrafs.php'
-    params ={'estacionId':str(articleid),'param':'NO','fechaIni':'2017-03-01','rango':'4','tipoDatos':''}
+    params ={'estacionId':str(username),'param':str(conta),'fechaIni':str(fecha),'rango':str(rango),'tipoDatos':''}
 
     response=requests.post(url, data=params)
     soup1 = BeautifulSoup(response.text, 'lxml')
@@ -35,6 +35,7 @@ def api_article(articleid):
     JsonText=r3[0].decode('utf-8')
     new =json.loads(JsonText)# This line performs query and returns json result
     return jsonify(new)
+
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 if __name__ == '__main__':
