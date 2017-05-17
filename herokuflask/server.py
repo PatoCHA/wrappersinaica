@@ -1,4 +1,5 @@
 import logging
+import sys
 import os
 from flask import Flask, request
 from flask_restful import Resource, Api
@@ -33,7 +34,7 @@ def api_article(articleid):
     r3 = r2[0].rsplit("['(.*?)']")
     JsonText=r3[0].decode('utf-8')
     new =json.loads(JsonText)# This line performs query and returns json result
-    return jsonify(new)
+    return jsonify(new={"status": 200})
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 if __name__ == '__main__':
