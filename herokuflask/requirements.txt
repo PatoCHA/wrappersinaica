@@ -1,3 +1,4 @@
+BeautifulSoup==3.2.1
 gunicorn==19.7.0
 requests==1.2.0
 Flask==0.10.1
