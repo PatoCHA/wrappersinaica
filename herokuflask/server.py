@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from flask_restful import Resource, Api
 from json import dumps
@@ -35,5 +36,5 @@ def api_article(articleid):
     return jsonify(new)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=24856)
-
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
