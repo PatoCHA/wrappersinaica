@@ -1,3 +1,4 @@
+import logging
 import os
 from flask import Flask, request
 from flask_restful import Resource, Api
@@ -33,7 +34,8 @@ def api_article(articleid):
     JsonText=r3[0].decode('utf-8')
     new =json.loads(JsonText)# This line performs query and returns json result
     return jsonify(new)
-
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
