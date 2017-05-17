@@ -2,7 +2,7 @@ import os
 from flask import Flask, request
 from flask_restful import Resource, Api
 from json import dumps
-from flask_jsonpify import jsonify
+flask_jsonpify
 import requests
 from bs4 import BeautifulSoup
 from pandas.io.json import json_normalize
