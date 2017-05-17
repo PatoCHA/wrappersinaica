@@ -35,5 +35,5 @@ def api_article(articleid):
     return jsonify(new)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=24856)
 
