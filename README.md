@@ -1,5 +1,5 @@
 # wrappersinaica
-## Es para sacar informaciion de las estaciones de monitoreo de calidad del aire.
+## Es para sacar información de las estaciones de monitoreo de calidad del aire.
 
                https://pacific-garden-86188.herokuapp.com/estacion?estacion=144&Fecha=2017-03-08&parametro=CO&rango=4
 
