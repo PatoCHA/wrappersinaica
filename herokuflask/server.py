@@ -16,12 +16,12 @@ def api_root():
 
 @app.route('/estacion', methods=['GET'])
 def api_article():
-    username = request.args.get('estacion') 
+    estacion = request.args.get('estacion') 
     fecha = request.args.get('Fecha')
     rango= request.args.get('rango')
     conta = request.args.get('parametro')
     url='http://sinaica.inecc.gob.mx/pags/datGrafs.php'
-    params ={'estacionId':str(username),'param':str(conta),'fechaIni':str(fecha),'rango':str(rango),'tipoDatos':''}
+    params ={'estacionId':str(estacion),'param':str(conta),'fechaIni':str(fecha),'rango':str(rango),'tipoDatos':''}
 
     response=requests.post(url, data=params)
     soup1 = BeautifulSoup(response.text, 'lxml')
