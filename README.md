@@ -1,5 +1,6 @@
-# wrappersinaica
+# wrapper sinaica (extracción de datos de calidad del aire mexico)
 ## Se usa para obtener informacion de calidad del aire
+## Webapp:
 
                https://pacific-garden-86188.herokuapp.com/estacion?estacion=144&Fecha=2017-03-08&parametro=CO&rango=4
 
