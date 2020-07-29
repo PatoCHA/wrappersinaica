@@ -1,4 +1,7 @@
 # wrapper sinaica (extracción de datos de calidad del aire mexico)
+# Esta version ya no sirve, usar:
+https://github.com/PatoCHA/Sinaica-download
+
 ## Se usa para obtener informacion de calidad del aire
 ## Webapp:
 
